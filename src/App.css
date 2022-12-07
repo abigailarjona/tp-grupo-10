@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700&display=swap");
 
-* {
-  margin: 0;
-}
 
 .App {
   background-color: #111;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
 }
 
-.row {
-  margin-left: 20px;
+.row h3{
+  margin: 1rem;
   color: white;
 }
 
@@ -33,7 +34,14 @@ body {
   margin-left: 0.5px;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.2em;
-  justify-content: center;
+}
+
+.card{
+  position: inherit !important;
+}
+
+.css-button-3d--green{
+  position: inherit !important;
 }
 
 h2 {
@@ -44,7 +52,8 @@ h2 {
   position: fixed;
   bottom: 0;
   background: #100a1f;
-  width: 100%;
+  width: 102vw !important;
+  max-width: 110% !important;
   display: flex;
   justify-content: center;
   gap: 20px;
