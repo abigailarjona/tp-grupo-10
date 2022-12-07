@@ -59,20 +59,21 @@ const MovieCard = ({
       <div className="card-body">
         <img className="card-img-top" src={API_IMG + poster_path} alt="img" />
         <div className="card-body">
-          <div className="d-grid d-md-flex justify-content-md-center">
+          <div className="d-grid d-md-flex justify-content-md-center ">
             <button
-              className="badge bg-success text-dark"
+              className="css-button css-button-3d css-button-3d--green"
               type="button"
               onClick={handleShowMovie}
             >
               More Info
-            </button>
+            </button>           
+            
           </div>
           <Modal show={showMovie} onHide={handleCloseMovie}>
             <Modal.Header closeButton>
               <Modal.Title>
                 <button
-                  className="badge bg-warning text-dark"
+                  className="css-button css-button-3d css-button-3d--yellow"
                   type="button"
                   onClick={() => {
                     confirmFavorite(id);

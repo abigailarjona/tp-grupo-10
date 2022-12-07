@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import MovieCard from "./MovieCard";
 
+
 function TopRated() {
   const [movies, setMovies] = useState([]);
   let [page, setPage] = useState(1);
@@ -60,7 +61,7 @@ function TopRated() {
             Next
           </button>
         </div>
-      </div>
+      </div>      
     </>
   );
 }

@@ -3,6 +3,7 @@
 * {
   margin: 0;
 }
+
 .App {
   background-color: #111;
 }
@@ -70,3 +71,64 @@ h2 {
 .paginacion button:hover {
   background: #137c32;
 }
+
+.css-button-3d--green {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #80ed99;
+  box-shadow: 0 5px #57cc99;
+}
+
+.css-button-3d--green:hover {
+  box-shadow: 0 3px #57cc99;
+  top: 1px;
+}
+
+.css-button-3d--green:active {
+  box-shadow: 0 0 #57cc99;
+  top: 5px;
+}
+
+.css-button-3d--yellow {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #ffe566;
+  box-shadow: 0 5px #ffd819;
+}
+
+.css-button-3d--yellow:hover {
+  box-shadow: 0 3px #ffd819;
+  top: 1px;
+}
+
+.css-button-3d--yellow:active {
+  box-shadow: 0 0 #ffd819;
+  top: 5px;
+}
+
+@media (max-width:800px) {
+  .grid {    
+    grid-template-columns: repeat(1, 1fr);
+    
+  }
+}  
