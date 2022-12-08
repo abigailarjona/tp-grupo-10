@@ -2,7 +2,6 @@ import '../login.css'
 import { useState } from 'react';
 import { useAuth } from '../context/authContext'
 import { useNavigate } from 'react-router-dom'
-import { async } from '@firebase/util';
 
 
 
@@ -28,7 +27,6 @@ export function Login() {
             await login(user.email, user.password)
             navigate('/')
         } catch (error) {
-            {/*  si hay un error me lo compara con el error de consola y tiene que salir seterror conn el texto asignado*/ }
             console.log(error.code);
             if (error.code === "auth/user-not-found") {
                 setError('User not found');
@@ -48,7 +46,7 @@ export function Login() {
 
                 <input type="password" name='password' className="password" id="password" placeholder='Password' onChange={handleChange}></input>
                 {error && <p>{error}</p>}
-ß
+
                 <button type="submit" className="boton">Log in</button>
 
                 <p> Don't you have an account? <a href='register' >Register here. </a></p>

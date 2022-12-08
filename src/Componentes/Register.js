@@ -2,8 +2,6 @@ import '../login.css'
 import { useState } from 'react';
 import { useAuth } from '../context/authContext'
 import { useNavigate } from 'react-router-dom'
-import { async } from '@firebase/util';
-
 
 
 export function Register() {
@@ -18,7 +16,7 @@ export function Register() {
 
     /* actualiza el estado   */
     const handleChange = ({ target: { name, value } }) => {
-        setUser({ ...user, [name]: value })ß
+        setUser({ ...user, [name]: value });
     };
     /*  esta es para ver lo que tiene el estado   */
     const handleSubmit = async (e) => {
