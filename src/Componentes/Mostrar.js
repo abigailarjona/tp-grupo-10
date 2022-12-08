@@ -64,7 +64,8 @@ const Mostrar = () => {
 
   useEffect(() => {
     getFavoritas();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])
 
   //7 mostrar datos en estructura
 
