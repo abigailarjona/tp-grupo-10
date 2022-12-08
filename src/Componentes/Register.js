@@ -18,7 +18,7 @@ export function Register() {
 
     /* actualiza el estado   */
     const handleChange = ({ target: { name, value } }) => {
-        setUser({ ...user, [name]: value })ß
+        setUser({ ...user, [name]: value })
     };
     /*  esta es para ver lo que tiene el estado   */
     const handleSubmit = async (e) => {
