@@ -5,7 +5,7 @@ import { Register } from "./Componentes/Register";
 import { Logout } from "./Componentes/Logout";
 import { ProtectedRoute } from "./Componentes/ProtectedRoute";
 
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/authContext";
 import Principal from "./Componentes/Principal";
 import MostrarFavoritas from "./Componentes/MostrarFavoritas";
 
