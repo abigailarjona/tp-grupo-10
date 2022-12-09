@@ -1,5 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
 import React, { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import "../App.css";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase";
@@ -16,6 +17,10 @@ const MovieCard = ({
   release_date,
   overview,
 }) => {
+
+  const { user } = useAuth();
+  console.log(user.email)
+
   const [showMovie, setShowMovie] = useState(false);
 
   const handleShowMovie = () => setShowMovie(true);
@@ -23,7 +28,6 @@ const MovieCard = ({
 
   //2 referenciamos la bd con su coleccion
 
-  const id_user = "102";
   const favoritasCollection = collection(db, "Favoritas");
 
   //3 declaramos una función para almacenar
@@ -31,7 +35,7 @@ const MovieCard = ({
   const addFavorite = async (e) => {
     await addDoc(favoritasCollection, {
       id_movie: id,
-      id_user: id_user,
+      id_user: user.email,
       title: title,
     });
   };
