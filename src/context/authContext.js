@@ -1,37 +1,55 @@
-import { createContext, useContext } from "react";
-import{createUserWithEmailAndPassword , signInWithEmailAndPassword} from 'firebase/auth';
-import {auth } from '../firebaseConfig/firebase'
+import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { auth } from "../firebaseConfig/firebase";
+
+const authContext = createContext();
+
+export const useAuth = () => {
+  const context = useContext(authContext);
+  if (!context) throw new Error("There is no Auth provider");
+  return context;
+};
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const signup = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const login = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const logout = () => signOut(auth);
 
 
-/* esto nos permite que cualquier componenete pueda acceder al contexto de si esta logeado el usuario o no 
-,si se importa en el componente 
--voy a poner esto envolviendo la app por que es el que contiene a todos los componentes*/
+  useEffect(() => {
+    const unsubuscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log({ currentUser });
+      setUser(currentUser);
+      setLoading(false);
+    });
+    return () => unsubuscribe();
+  }, []);
 
- export const authContext = createContext();  
-
-/* useAuth es la que me devuelve el valor del usuario ,en si es un hook*/
-  export const useAuth = () => {
-    const context= useContext(authContext)
-
-   
-    return context;
- }
-    
- /*authprovider devuelve un componenete en este caso signup/ login */
-export function AuthProvider({children}) {
-
-     const signup = (email, password) => 
-        createUserWithEmailAndPassword(auth, email, password); 
-
-      const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
-    
-
-    return <authContext.Provider value={{signup, login }}>{children} </authContext.Provider>;
+  return (
+    <authContext.Provider
+      value={{
+        signup,
+        login,
+        user,
+        logout,
+        loading,
+      }}
+    >
+      {children}
+    </authContext.Provider>
+  );
 }
-
-/* 
-createUserWithEmailAndPassword me permite mediante a la autenficacion de firebase creae un usuario con los datos asignados email y password
-
-
-signInWithEmailAndPassword  me permite ingresar a travez de la autenficacion 
-*/

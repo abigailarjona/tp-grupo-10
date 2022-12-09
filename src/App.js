@@ -1,23 +1,48 @@
-import "./App.css";
-import Principal from "./Componentes/Principal";
-import Mostrar from "./Componentes/Mostrar";
-import Login from "./Componentes/Login";
-import Register from "./Componentes/Register";
-import  {AuthProvider} from "./context/authContext";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Login } from "./Componentes/Login";
+import { Register } from "./Componentes/Register";
+import { Logout } from "./Componentes/Logout";
+import { ProtectedRoute } from "./Componentes/ProtectedRoute";
+
+import { AuthProvider } from "./context/AuthContext";
+import Principal from "./Componentes/Principal";
+import MostrarFavoritas from "./Componentes/MostrarFavoritas";
 
 function App() {
   return (
-    <div className="App">
-      <AuthProvider> {/* con este  authProvider le permite saber de donde sacar el usuario,de donde vienen los datos */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Principal />} />
-          <Route path="/mostrarfavoritas" element={<Mostrar />} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/Register" element={<Register/>} />
-        </Routes>
-      </BrowserRouter>
+    <div className="bg-slate-300 text-black h-screen flex text-white">
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Principal />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/mostrarfavoritas"
+              element={
+                <ProtectedRoute>
+                  <MostrarFavoritas />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/logout"
+              element={
+                <ProtectedRoute>
+                  <Logout />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </BrowserRouter>
       </AuthProvider>
     </div>
   );

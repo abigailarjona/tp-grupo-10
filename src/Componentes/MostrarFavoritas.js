@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 import {
   collection,
   getDocs,
@@ -10,18 +11,19 @@ import {
 import { db } from "../firebaseConfig/firebase";
 import Swal from "sweetalert2";
 
-const Mostrar = () => {
+const MostrarFavoritas = () => {
+
+  const { user } = useAuth();
+  console.log(user.email)
   //1 configuración de los hook de mostrar
 
   const [favoritas, setFavoritas] = useState([]);
 
   //2 referenciar la db de firebase
 
-  // const favoritasCollection = collection(db, "Favoritas");
-  const id_user = "102";
   const favoritasCollection = query(
     collection(db, "Favoritas"),
-    where("id_user", "==", id_user)
+    where("id_user", "==", user.email)
   );
 
   //3 creamos la funcionabilidad para mostrar los documentos con asincronismo
@@ -65,7 +67,7 @@ const Mostrar = () => {
   useEffect(() => {
     getFavoritas();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
+  }, [])
 
   //7 mostrar datos en estructura
 
@@ -109,4 +111,4 @@ const Mostrar = () => {
   );
 };
 
-export default Mostrar;
+export default MostrarFavoritas;
