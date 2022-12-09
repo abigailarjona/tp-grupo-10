@@ -30,6 +30,7 @@ export function AuthProvider({ children }) {
   const logout = () => signOut(auth);
 
 
+
   useEffect(() => {
     const unsubuscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log({ currentUser });
