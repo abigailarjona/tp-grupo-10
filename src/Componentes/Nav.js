@@ -22,7 +22,9 @@ function Nav() {
         src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
         alt="Netflix Logo"
       />
-      <img className="nav__avatar" src="images/avatar-7.png" alt="avatar" />
+      <a href="Profile">
+        <img className="nav__avatar" src="images/avatar-7.png" alt="avatar" />
+      </a>
     </div>
   );
 }

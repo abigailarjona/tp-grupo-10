@@ -3,6 +3,7 @@ import Principal from "./Componentes/Principal";
 import Mostrar from "./Componentes/Mostrar";
 import Login from "./Componentes/Login";
 import Register from "./Componentes/Register";
+import Profile from "./Componentes/Profile";
 import  {AuthProvider} from "./context/authContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/mostrarfavoritas" element={<Mostrar />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/Register" element={<Register/>} />
+          <Route path="/Profile" element={<Profile/>} />
         </Routes>
       </BrowserRouter>
       </AuthProvider>
