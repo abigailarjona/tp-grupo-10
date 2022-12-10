@@ -3,6 +3,7 @@ import "../App.css";
 import Banner from "./Banner";
 import Nav from "./Nav";
 import TopRated from "./TopRated";
+import Contacto from "./Contacto";
 import { useAuth } from "../context/authContext";
 
 function Principal() {
@@ -13,6 +14,8 @@ function Principal() {
       <Nav />
       <Banner />
       <TopRated />
+      <Contacto />
+
     </div>
   );
 }
