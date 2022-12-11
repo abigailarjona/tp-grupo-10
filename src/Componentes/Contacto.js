@@ -17,7 +17,7 @@ function Contacto() {
                     <input name="email" placeholder="Email" className="email mb-2" type="email" required />
                     <textarea rows="4" cols="50" name="message" placeholder="Please enter your message" className="message mb-2" required></textarea>
 
-                    <input name="submit" className="btn p-2" type="submit" />
+                    <input name="submit" className="btn btn-outline-success p-2" type="submit" />
                 </form>
             </div>
         </div>
