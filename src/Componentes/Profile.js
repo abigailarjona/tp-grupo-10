@@ -3,9 +3,13 @@ import '../login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { useAuth } from "../context/authContext";
 
 
 function Profile() {
+
+  const { user } = useAuth();
+
   return (
   
     <Card style={{ width: '18rem' }}>
@@ -24,8 +28,8 @@ function Profile() {
         </Form.Group>
 
         <Form.Group className="mb-2" controlId="formBasicEmail" >
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="user@mail.com" disabled />
+          <Form.Label>Email user </Form.Label>
+          <Form.Control type="email" value={user.email} disabled />
           <Form.Text className="text-muted">
             Registration email cannot be modified.
           </Form.Text>

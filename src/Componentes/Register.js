@@ -2,7 +2,8 @@ import '../login.css'
 import { useState } from 'react';
 import { useAuth } from '../context/authContext'
 import { useNavigate } from 'react-router-dom'
-
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebaseConfig/firebase";
 
 export function Register() {
 
@@ -10,18 +11,31 @@ export function Register() {
         email: '',
         password: '',
     });
+    
     const { signup } = useAuth();
     const navigate = useNavigate(); /* me permite redirigir por ejem: linea  29 ,si esta todo ok lo redirige a app*/
     const [error, setError] = useState();
 
+    const userCollection = collection(db, "user");
+    const addUser = async (e) => {
+        await addDoc(userCollection, {
+            id:user.email,
+            name: user.email
+        });
+    };
+
+    // console.log(userCollection);
+    
     /* actualiza el estado   */
     const handleChange = ({ target: { name, value } }) => {
         setUser({ ...user, [name]: value });
-
+        
     };
     /*  esta es para ver lo que tiene el estado   */
     const handleSubmit = async (e) => {
         e.preventDefault();
+        await addUser(user);
+        console.log("el usuerio registrado es ", user.email)
         setError('')
         try {
             await signup(user.email, user.password)
