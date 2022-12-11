@@ -4,6 +4,7 @@ import "../App.css";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase";
 import Swal from "sweetalert2";
+import "./MovieCard.css";
 
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
@@ -56,8 +57,10 @@ const MovieCard = ({
 
   return (
     <div className="card text-center bg-dark mb-3">
-      <div className="card-body">
+      <div className="card-body position-relative">
+      
         <img className="card-img-top" src={API_IMG + poster_path} alt="img" />
+        <i className="fa-solid fa-bookmark position-absolute ms-4 mt-2 top-1 start-0 translate-middle"></i> 
         <div className="card-body">
           <div className="d-grid d-md-flex justify-content-md-center">
             <button
