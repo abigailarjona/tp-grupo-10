@@ -40,11 +40,14 @@ h2 {
   background-color: antiquewhite;
 }
 
+/* Paginación prev - next */
+
 .paginacion {
   position: fixed;
   bottom: 0;
-  background: #100a1f;
-  width: 100%;
+  background: #111;
+  width: 102vw !important;
+  max-width: 110% !important;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -52,22 +55,22 @@ h2 {
 }
 
 .paginacion button {
-  cursor: pointer;
   border: none;
+  height: 3rem;
+  width: 3rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  height: 50px;
-  width: 200px;
-  background: #241744;
+  align-items: center;
+  align-content: center;
+  background: #ffffff2c;
   color: #fff;
+  font-size: 2rem;
   border-radius: 100px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
   transition: 0.3s ease all;
+  margin: 0px 1rem;
 }
 
 .paginacion button:hover {
   background: #137c32;
 }
+
