@@ -1,6 +1,5 @@
 import { Modal, Button } from "react-bootstrap";
 import React, { useState } from "react";
-import { useAuth } from "../context/authContext";
 import "../App.css";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase";
@@ -17,10 +16,6 @@ const MovieCard = ({
   release_date,
   overview,
 }) => {
-
-  const { user } = useAuth();
-  console.log(user.email)
-
   const [showMovie, setShowMovie] = useState(false);
 
   const handleShowMovie = () => setShowMovie(true);
@@ -28,6 +23,7 @@ const MovieCard = ({
 
   //2 referenciamos la bd con su coleccion
 
+  const id_user = "102";
   const favoritasCollection = collection(db, "Favoritas");
 
   //3 declaramos una función para almacenar
@@ -35,7 +31,7 @@ const MovieCard = ({
   const addFavorite = async (e) => {
     await addDoc(favoritasCollection, {
       id_movie: id,
-      id_user: user.email,
+      id_user: id_user,
       title: title,
     });
   };
@@ -59,30 +55,31 @@ const MovieCard = ({
   };
 
   return (
-    <div className="card text-center bg-dark mb-3">
+    <div className="card text-center bg-dark mb-2 tarjeta">
       <div className="card-body">
         <img className="card-img-top" src={API_IMG + poster_path} alt="img" />
-        <div className="card-body">
-          <div className="d-grid d-md-flex justify-content-md-center">
+        <div className="card-body boton-oculto">
+          <div>
             <button
-              className="badge bg-success text-dark"
+              className="css-button css-button-3d css-button-3d--green"
               type="button"
               onClick={handleShowMovie}
             >
-              More Info
-            </button>
+              <i class="fa-solid fa-plus"></i> Info
+            </button>           
+            
           </div>
           <Modal show={showMovie} onHide={handleCloseMovie}>
             <Modal.Header closeButton>
               <Modal.Title>
                 <button
-                  className="badge bg-warning text-dark"
+                  className="css-button css-button-3d css-button-3d--yellow"
                   type="button"
                   onClick={() => {
                     confirmFavorite(id);
                   }}
                 >
-                  Add favorite
+                  <i class="fa-solid fa-star"></i> Add favorites
                 </button>
               </Modal.Title>
             </Modal.Header>

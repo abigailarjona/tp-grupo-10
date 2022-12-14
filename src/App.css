@@ -19,8 +19,26 @@
   position: inherit !important;
 }
 
+.css-button{
+  color: white;
+  font-weight: bold;
+}
+
 .css-button-3d--green{
   position: inherit !important;
+  background-color: rgb(29, 234, 142);
+  border: 1px solid rgb(0, 117, 82);
+  padding: 0.3rem 1rem;
+  box-shadow: 2px 2px rgb(156, 255, 210);
+  border-radius: 0.5rem;
+}
+
+.css-button-3d--yellow{
+  background-color: rgb(255, 217, 0);
+  border: 1px solid rgb(255, 187, 0);
+  padding: 0.3rem 1rem;
+  box-shadow: 2px 2px  rgb(255, 178, 11);
+  border-radius: 0.5rem;
 }
 
 body {
