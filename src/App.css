@@ -3,14 +3,24 @@
 * {
   margin: 0;
 }
-/*
+
 .App {
-  background-color: #111;
-}*/
+  /*background-color: #111;*/
+    overflow: hidden;
+}
 
 .row {
   margin-left: 20px;
   color: white;
+}
+
+/* Position inherit de componentes bootstrap para que no se superpongan al nav */
+.card{
+  position: inherit !important;
+}
+
+.css-button-3d--green{
+  position: inherit !important;
 }
 
 body {
@@ -34,6 +44,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.2em;
   justify-content: center;
+  margin-bottom: 4rem;
 }
 
 h2 {

@@ -52,13 +52,12 @@ function TopRated() {
             <h5>waiting...</h5>
           )}
         </div>
-        <div className="row mb-5"></div>
         <div className="paginacion">
-          <button id="btnAnterior" data-id="prev" onClick={controlPage}>
-            Prev
+          <button id="btnAnterior"  onClick={controlPage}>
+          <i data-id="prev" class="fa-solid fa-chevron-left"></i>
           </button>
           <button id="btnSiguiente" data-id="next" onClick={controlPage}>
-            Next
+          <i data-id="next" class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
       </div>      
