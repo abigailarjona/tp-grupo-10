@@ -38,11 +38,14 @@ function Nav() {
           <ul className="links">
           <div className="triangulo"></div>
             <li id="primer-li">
-              <a href="#">Mis Favoritos</a>
+              <a href="/mostrarfavoritas">Mis Favoritos</a>
             </li>
             <hr/>
             <li>
-              <a href="#">Log Out</a>
+              <a href="/logout">Log Out</a>
+            </li>
+            <li>
+              <a href="#">Profile</a>
             </li>
           </ul>
         </li>
