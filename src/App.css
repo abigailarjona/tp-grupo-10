@@ -69,6 +69,10 @@ h2 {
   background-color: antiquewhite;
 }
 
+.rated{
+  background-color: #111;
+}
+
 /* Paginación prev - next */
 
 .paginacion {
@@ -103,3 +107,17 @@ h2 {
   background: #137c32;
 }
 
+@media (max-width:800px) {
+  .grid {    
+    grid-template-columns: repeat(3, 1fr);
+    
+  }
+
+  .css-button-3d--green {
+    min-width: 70px;
+   
+    font-size: 10px;
+
+ 
+  }
+}  
