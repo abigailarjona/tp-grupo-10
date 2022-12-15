@@ -53,14 +53,14 @@ function TopRated() {
           )}
         </div>
         <div className="paginacion">
-          <button id="btnAnterior"  onClick={controlPage}>
-          <i data-id="prev" class="fa-solid fa-chevron-left"></i>
+          <button id="btnAnterior" onClick={controlPage}>
+            <i data-id="prev" class="fa-solid fa-chevron-left"></i>
           </button>
           <button id="btnSiguiente" data-id="next" onClick={controlPage}>
-          <i data-id="next" class="fa-solid fa-chevron-right"></i>
+            <i data-id="next" class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
-      </div>      
+      </div>
     </>
   );
 }
