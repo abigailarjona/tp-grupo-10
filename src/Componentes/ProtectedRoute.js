@@ -1,7 +1,16 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
+/**
+ * ProtectedRoute es el componente que permite que solo accedan usuarios logueados a las rutas protegidas:
+ * @param {{children}} <Principal> <MostrarFavoritas /> <Logout />
+ * @returns el elemento que quiero renderizar, en este caso las rutas protegidas: "/principal", "/mostrarfavoritas", "/logout"
+ */
+
+
+
 export function ProtectedRoute({ children }) {
+    
     const { user, loading } = useAuth();
 
     if (loading) return <h1>Loading</h1>;
@@ -10,3 +19,4 @@ export function ProtectedRoute({ children }) {
 
     return <>{children}</>;
 }
+
