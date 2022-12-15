@@ -71,8 +71,13 @@ h2 {
 
 .rated{
   background-color: #111;
+  margin-top: -10rem;
 }
 
+
+.rated h3{
+  padding: 1rem 3rem;
+}
 /* Paginación prev - next */
 
 .paginacion {
