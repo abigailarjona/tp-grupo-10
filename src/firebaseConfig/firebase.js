@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 
+// Configuración y keys en Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBjexxHYDxMTIW_r8IaXyHeKBq6CGwXjms",
   authDomain: "tp-grupo10.firebaseapp.com",
@@ -12,7 +13,11 @@ const firebaseConfig = {
 
 };
 
+// Inicia la aplicacion en Firebase
 const app = initializeApp(firebaseConfig);
+
+// Autorizacion de usuarios en Firebase
 export const auth = getAuth(app)
 
+// Base de datos en Firebase
 export const db = getFirestore(app);

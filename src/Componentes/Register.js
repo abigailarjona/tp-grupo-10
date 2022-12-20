@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useAuth } from '../context/authContext'
 import { useNavigate } from 'react-router-dom'
 
-
+// Registro de usuarios
 export function Register() {
 
     const [user, setUser] = useState({

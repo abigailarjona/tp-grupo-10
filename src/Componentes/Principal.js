@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import TopRated from "./TopRated";
 import { useAuth } from "../context/authContext";
 
+// Función principal, llama a los componentes: Nav, Banner y TopRated
 function Principal() {
   const { user } = useAuth();
   console.log(user)
