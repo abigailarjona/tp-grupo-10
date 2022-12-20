@@ -49,6 +49,9 @@ function Nav() {
               <li>
                 <a href="#">Profile</a>
               </li>
+              <li>
+                <a href="/contacto">Contacto</a>
+              </li>
             </ul>
           </li>
         </ul>

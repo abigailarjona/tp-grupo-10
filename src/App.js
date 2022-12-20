@@ -8,6 +8,7 @@ import { ProtectedRoute } from "./Componentes/ProtectedRoute";
 import { AuthProvider } from "./context/authContext";
 import Principal from "./Componentes/Principal";
 import MostrarFavoritas from "./Componentes/MostrarFavoritas";
+import Contacto from "./Componentes/Contacto";
 
 // Rutas protegidas: "/", "/mostrarfavoritas", "/logout"
 // Rutas no protegidas: "/login", "/register"
@@ -32,6 +33,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <MostrarFavoritas />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/contacto"
+              element={
+                <ProtectedRoute>
+                  <Contacto />
                 </ProtectedRoute>
               }
             />
