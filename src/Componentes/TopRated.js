@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import MovieCard from "./MovieCard";
 
-
+// TopRated muestra los resultados correspondientes a la categoria Top Rated de TMDB API
 function TopRated() {
   const [movies, setMovies] = useState([]);
   let [page, setPage] = useState(1);
@@ -18,6 +18,7 @@ function TopRated() {
       });
   }, [page]);
 
+  // Control de paginacion
   const controlPage = (e) => {
     switch (e.target.dataset.id) {
       case "next":

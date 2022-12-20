@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./Banner.css";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
+// Banner selecciona un programa de TV aleatorio utilizando la funcion Math.random()
+// Cambia cada vez que se recarga la Aplicación
+// Los resultados corresponden a la categoria Discover TV shows de TMDB API
+
 function Banner() {
   const [movie, setMovie] = useState({});
   useEffect(() => {

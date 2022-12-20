@@ -10,23 +10,25 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase";
 import Swal from "sweetalert2";
+import { useNavigate } from 'react-router-dom'
 
+// Mostrar las peliculas favoritas seleccionadas por el usuario
 const MostrarFavoritas = () => {
 
   const { user } = useAuth();
   console.log(user.email)
-  //1 configuración de los hook de mostrar
-
   const [favoritas, setFavoritas] = useState([]);
 
-  //2 referenciar la db de firebase
+  //Referencia la db de firebase y la coleccion Favoritas
+  // Aplica un filtro where para mostrar exclusivamente las peliculas que coincidan con este usuario
+  // El usuario lo extrae del contexto
 
   const favoritasCollection = query(
     collection(db, "Favoritas"),
     where("id_user", "==", user.email)
   );
 
-  //3 creamos la funcionabilidad para mostrar los documentos con asincronismo
+  //Funcionabilidad para mostrar los documentos con asincronismo
 
   const getFavoritas = async () => {
     const data = await getDocs(favoritasCollection);
@@ -36,7 +38,7 @@ const MostrarFavoritas = () => {
     console.log(favoritas);
   };
 
-  //4 declaración función delete para eliminar registros
+  //Función delete para eliminar registros de Favoritas
 
   const deleteFavorita = async (id) => {
     const favoritaDoc = doc(db, "Favoritas", id);
@@ -44,32 +46,38 @@ const MostrarFavoritas = () => {
     getFavoritas();
   };
 
-  //5 configuración sweetalert
+  //Configuración sweetalert para eliminar registros
   const confirmDelete = (id) => {
     Swal.fire({
-      title: "Eliminar de favoritas?",
-      text: "Seguro de querer eliminarla!",
+      title: "Remove from favorites?",
+      text: "Are you sure to delete it!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Si, Eliminar!",
+      confirmButtonText: "Yes, Delete!",
     }).then((result) => {
       if (result.isConfirmed) {
         deleteFavorita(id);
-        Swal.fire("Eliminada", "La película fue eliminada.", "Listo");
+        Swal.fire("Removed", "The movie was removed.", "Deleted");
       }
     });
   };
 
-  //6 declaramos el useEffect
+  //UseEffect, obener registros
 
   useEffect(() => {
     getFavoritas();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  //7 mostrar datos en estructura
+  // Volver de Favoritas
+  const navigate = useNavigate();
+  const volver = (e) => {
+    navigate('/')
+  };
+
+  // Muestra los datos en estructura
 
   return (
     <div className="container">
@@ -80,7 +88,7 @@ const MostrarFavoritas = () => {
               <tr>
                 <th>id_movie</th>
                 <th>title</th>
-                <th>Acciones</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody className="text-light">
@@ -106,6 +114,9 @@ const MostrarFavoritas = () => {
             </tbody>
           </table>
         </div>
+        <button id="btnAnterior" onClick={volver}>
+          <i data-id="prev" class="fa-solid fa-chevron-left"></i>
+        </button>
       </div>
     </div>
   );
