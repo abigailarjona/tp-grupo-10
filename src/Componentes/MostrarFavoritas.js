@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase";
 import Swal from "sweetalert2";
+import { useNavigate } from 'react-router-dom'
 
 // Mostrar las peliculas favoritas seleccionadas por el usuario
 const MostrarFavoritas = () => {
@@ -70,7 +71,13 @@ const MostrarFavoritas = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  //Muestra los datos en estructura
+  // Volver de Favoritas
+  const navigate = useNavigate();
+  const volver = (e) => {
+    navigate('/')
+  };
+
+  // Muestra los datos en estructura
 
   return (
     <div className="container">
@@ -107,6 +114,9 @@ const MostrarFavoritas = () => {
             </tbody>
           </table>
         </div>
+        <button id="btnAnterior" onClick={volver}>
+          <i data-id="prev" class="fa-solid fa-chevron-left"></i>
+        </button>
       </div>
     </div>
   );
