@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import "../App.css";
 import MovieCard from "./MovieCard";
+
 
 
 function TopRated() {
   const [movies, setMovies] = useState([]);
   let [page, setPage] = useState(1);
+
 
   useEffect(() => {
     fetch(
@@ -35,6 +37,7 @@ function TopRated() {
     }
   };
 
+
   return (
     <>
       <div className="rated row">
@@ -52,12 +55,15 @@ function TopRated() {
             <h5>waiting...</h5>
           )}
         </div>
+        
         <div className="paginacion">
           <button id="btnAnterior" onClick={controlPage}>
             <i data-id="prev" class="fa-solid fa-chevron-left"></i>
           </button>
           <button id="btnSiguiente" data-id="next" onClick={controlPage}>
             <i data-id="next" class="fa-solid fa-chevron-right"></i>
+     
+          
           </button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Banner from "./Banner";
 import Nav from "./Nav";
 import TopRated from "./TopRated";
 import { useAuth } from "../context/authContext";
+import Footer from "./footer";
 
 function Principal() {
   const { user } = useAuth();
@@ -13,6 +14,7 @@ function Principal() {
       <Nav />
       <Banner />
       <TopRated />
+      <Footer/>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/authContext";
+import NavDos from "./NavDos";
 import {
   collection,
   getDocs,
@@ -71,8 +72,10 @@ const MostrarFavoritas = () => {
 
   //7 mostrar datos en estructura
 
-  return (
-    <div className="container">
+  return ( <>
+      <NavDos/>
+    <div className="container" id="mostrarfavoritas">
+   
       <div className="row">
         <div className="col">
           <table className="table table-dark table-hover">
@@ -108,6 +111,7 @@ const MostrarFavoritas = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
