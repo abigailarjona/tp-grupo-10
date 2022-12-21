@@ -27,7 +27,7 @@ function Nav() {
       <nav>
         <ul>
           <li>
-            <a href="#">
+            <a>
               <img
                 className="nav_logo"
                 src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
@@ -44,17 +44,12 @@ function Nav() {
             <ul className="links">
               <div className="triangulo"></div>
 
-              <li>
-                <a href="/#">Home</a>
+              <li className="selecc">
+                <a className="selecc" href="/#">Home</a>
               </li>
               <hr />
               <li>
                 <a href="/mostrarfavoritas">Mis Favoritos</a>
-              </li>
-             
-              <hr />
-              <li>
-                <a href="/profile">Profile</a>
               </li>
                <hr />
               <li>

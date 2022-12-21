@@ -62,7 +62,7 @@ const MovieCard = ({
     <div className="card text-center bg-dark mb-2 tarjeta">
       <div className="card-body">
         <img className="card-img-top" src={API_IMG + poster_path} alt="img" />
-        <div className="card-body boton-oculto">
+        <div className="card-body">
           <div>
             <button
               className="css-button css-button-3d css-button-3d--green"

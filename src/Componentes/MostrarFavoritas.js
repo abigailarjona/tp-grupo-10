@@ -117,9 +117,6 @@ const MostrarFavoritas = () => {
             </tbody>
           </table>
         </div>
-        <button id="btnAnterior" onClick={volver}>
-          <i data-id="prev" class="fa-solid fa-chevron-left"></i>
-        </button>
       </div>
     </div>
     </>
