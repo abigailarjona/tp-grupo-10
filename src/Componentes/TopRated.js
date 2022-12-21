@@ -20,6 +20,7 @@ function TopRated() {
       });
   }, [page]);
 
+  // Control de paginacion
   const controlPage = (e) => {
     switch (e.target.dataset.id) {
       case "next":

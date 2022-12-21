@@ -2,6 +2,7 @@ import '../login.css'
 import { useAuth } from '../context/authContext'
 import { useNavigate } from 'react-router-dom'
 
+// Logout de usuarios
 export function Logout() {
     const { logout, user } = useAuth();
     const navigate = useNavigate();

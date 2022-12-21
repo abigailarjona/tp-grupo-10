@@ -25,11 +25,12 @@ const MovieCard = ({
   const handleShowMovie = () => setShowMovie(true);
   const handleCloseMovie = () => setShowMovie(false);
 
-  //2 referenciamos la bd con su coleccion
+  //Referencia la bd con la coleccion Favoritas
 
   const favoritasCollection = collection(db, "Favoritas");
 
-  //3 declaramos una función para almacenar
+  //Función para almacenar registros.
+  // El usuario lo obtiene del contexto
 
   const addFavorite = async (e) => {
     await addDoc(favoritasCollection, {
@@ -39,7 +40,7 @@ const MovieCard = ({
     });
   };
 
-  //5 configuración sweetalert
+  //Configuración sweetalert. Agregar favorita
   const confirmFavorite = (id) => {
     Swal.fire({
       title: "You are going to add the movie!",

@@ -9,6 +9,9 @@ import { AuthProvider } from "./context/authContext";
 import Principal from "./Componentes/Principal";
 import MostrarFavoritas from "./Componentes/MostrarFavoritas";
 
+// Rutas protegidas: "/", "/mostrarfavoritas", "/logout"
+// Rutas no protegidas: "/login", "/register"
+
 function App() {
   return (
     <div className="bg-slate-300 text-black h-screen flex text-white">

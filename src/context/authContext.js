@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebaseConfig/firebase";
 
+// Contexto. Comparte los datos de login/logout del usuario con los otros componentes de la aplicación.
 const authContext = createContext();
 
 export const useAuth = () => {
