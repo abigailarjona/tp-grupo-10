@@ -45,7 +45,6 @@ const MovieCard = ({
     Swal.fire({
       title: "You are going to add the movie!",
       text: "Are you sure?",
-      icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -53,7 +52,7 @@ const MovieCard = ({
     }).then((result) => {
       if (result.isConfirmed) {
         addFavorite(id);
-        Swal.fire("Added", "The movie was added to favorites.", "Cute");
+        Swal.fire("Added", "The movie was added to favorites.");
       }
     });
   };
@@ -76,7 +75,7 @@ const MovieCard = ({
           <Modal show={showMovie} onHide={handleCloseMovie}>
             <Modal.Header closeButton>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body >
               <img
                 className="card-img-top"
                 style={{ width: "100%", alignSelf:"center" }}

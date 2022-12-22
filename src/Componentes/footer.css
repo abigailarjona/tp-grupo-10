@@ -111,20 +111,52 @@
     text-decoration: none;
     padding: 0.3rem;
     border-radius: 0.4rem;
-    background-color: rgba(202, 202, 202, 0.466);
+    background-color: aqua;
     color: #111;
+    transition: all 0.3s;
+  }
+
+  #modal-body > div > a:hover{
+ 
+    background-color: rgb(216, 173, 230);
+    box-shadow: 0px 0px 5px  rgb(216, 173, 230);
   }
 
   #modal-body > div > p{
     margin: 0px;
   }
 
-  @media (max-width:587px) {
+  .fa-envelope{
+    margin: 0.3rem;
+  }
+
+  footer p{
+    margin: 0px;
+    min-width: 100px;
+  }
+
+  @media (max-width:588px) {
+
+    footer > ul{
+      justify-content: center;
+    }
+
+
     .integrantes p{
+      display: none;
+    }
+
+    #contactanos p{
       display: none;
     }
 
     #contactanos{
       padding: 0.3rem 0.5rem;
+      font-size: 1.5rem;
+      background-color: rgba(17, 17, 17, 0);
+    }
+
+    .fa-github, .fa-users{
+      font-size: 1.5rem;
     }
   }

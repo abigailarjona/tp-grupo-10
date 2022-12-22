@@ -54,7 +54,7 @@ function Footer() {
 
                 <div>
                   <p>Mariano Munarriz</p>
-                  <a>Linkedin Mariano</a>
+                  <a href="https://www.linkedin.com/">Linkedin Mariano</a>
                 </div>
 
                 <div>
@@ -69,7 +69,7 @@ function Footer() {
 
                 <div>
                   <p>Abigail Arjona</p>
-                  <a>Linkedin Abigail</a>
+                  <a href="https://www.linkedin.com/">Linkedin</a>
                 </div>
 
                 <div>
@@ -98,9 +98,9 @@ function Footer() {
           </Modal>
 
           <li>
-            <a href="#" id="contactanos">
+            <a href="/contacto" id="contactanos">
               <i class="fa-regular fa-envelope"></i>
-              Contactanos
+              <p>Contact Us</p>
             </a>
           </li>
         </ul>

@@ -115,6 +115,12 @@ h2 {
   margin: 0.5rem;
 }
 
+.tarjeta-info{
+  background-color: rgba(17, 17, 17, 0.539);
+  margin: 0px;
+  width: 100%;
+}
+
 
 /* Paginación prev - next */
 

@@ -30,6 +30,7 @@ const Banner = ({
         console.log(movie);
         setMovie(data.results[Math.floor(Math.random() * data.results.length)]);
       });
+       // eslint-disable-next-line
   }, []);
 
   const { user } = useAuth();
@@ -58,7 +59,6 @@ const Banner = ({
     Swal.fire({
       title: "You are going to add the movie!",
       text: "Are you sure?",
-      icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -110,7 +110,7 @@ const Banner = ({
               type="button"
               onClick={handleShowMovie}
             >
-              <i class="fa-solid fa-plus"></i> Info
+              <i className="fa-solid fa-plus"></i> Info
             </button>
             </div>
 
@@ -127,7 +127,7 @@ const Banner = ({
               />
               <h3>{movie?.name || movie?.title || movie?.orginal_name}</h3>
               <h4>Vote average: {movie?.vote_average}</h4>
-              <h5>Release Date: {movie.release_date}</h5>
+              <h5>Release Date: {movie?.release_date}</h5>
               <h6>Overview</h6>
               <p>{movie?.overview}</p>
             </Modal.Body>
@@ -136,7 +136,7 @@ const Banner = ({
                   className="css-button css-button-3d--yellow"
                   type="button"
                   onClick={() => {
-                    confirmFavorite(movie.id);
+                    confirmFavorite(id);
                   }}
                 >
                   <i class="fa-solid fa-star"></i> Add favorites
