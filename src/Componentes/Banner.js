@@ -20,16 +20,18 @@ const Banner = ({
 }) => {
 
   const [movie, setMovie] = useState({});
+  const page = "100"
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=191528030c357419329af1198edbcb24&with_networks=213`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=191528030c357419329af1198edbcb24&language=en-US&&page=${page}`
     )
-    
+
       .then((res) => res.json())
       .then((data) => {
         console.log(movie);
         setMovie(data.results[Math.floor(Math.random() * data.results.length)]);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { user } = useAuth();
@@ -45,29 +47,12 @@ const Banner = ({
 
   //3 declaramos una función para almacenar
 
-  const addFavorite = async (e) => {
+
+  const confirmFavorite = async (id, title) => {
     await addDoc(favoritasCollection, {
       id_movie: id,
       id_user: user.email,
       title: title,
-    });
-  };
-
-  //5 configuración sweetalert
-  const confirmFavorite = (id) => {
-    Swal.fire({
-      title: "You are going to add the movie!",
-      text: "Are you sure?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, add it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        addFavorite(id);
-        Swal.fire("Added", "The movie was added to favorites.", "Cute");
-      }
     });
   };
 
@@ -95,57 +80,57 @@ const Banner = ({
           <div className="botones-descripcion">
 
             <div className="banner__buttons">
-            <button
-                  className="banner__button"
-                  type="button"
-                  onClick={() => {
-                    confirmFavorite(movie.id);
-                  }}
-                >
-                 Add  <i class="fa-solid fa-star"></i>
-                </button>
+              <button
+                className="banner__button"
+                type="button"
+                onClick={() => {
+                  confirmFavorite(movie?.id, movie?.title);
+                }}
+              >
+                Add  <i className="fa-solid fa-star"></i>
+              </button>
 
               <button
-              className="banner__button"
-              type="button"
-              onClick={handleShowMovie}
-            >
-              <i class="fa-solid fa-plus"></i> Info
-            </button>
+                className="banner__button"
+                type="button"
+                onClick={handleShowMovie}
+              >
+                <i className="fa-solid fa-plus"></i> Info
+              </button>
             </div>
 
-            
+
             <Modal show={showMovie} onHide={handleCloseMovie}>
-            <Modal.Header closeButton>
-            </Modal.Header>
-            <Modal.Body>
-              <img
-                className="card-img-top"
-                style={{ width: "100%", alignSelf:"center" }}
-                src={API_IMG + movie?.backdrop_path}
-                alt="img"
-              />
-              <h3>{movie?.name || movie?.title || movie?.orginal_name}</h3>
-              <h4>Vote average: {movie?.vote_average}</h4>
-              <h5>Release Date: {movie.release_date}</h5>
-              <h6>Overview</h6>
-              <p>{movie?.overview}</p>
-            </Modal.Body>
-            <Modal.Footer className="footer-card">
-            <button
+              <Modal.Header closeButton>
+              </Modal.Header>
+              <Modal.Body>
+                <img
+                  className="card-img-top"
+                  style={{ width: "100%", alignSelf: "center" }}
+                  src={API_IMG + movie?.backdrop_path}
+                  alt="img"
+                />
+                <h3>{movie?.name || movie?.title || movie?.orginal_name}</h3>
+                <h4>Vote average: {movie?.vote_average}</h4>
+                <h5>Release date: {movie?.release_date}</h5>
+                <h6>Overview</h6>
+                <p>{movie?.overview}</p>
+              </Modal.Body>
+              <Modal.Footer className="footer-card">
+                <button
                   className="css-button css-button-3d--yellow"
                   type="button"
                   onClick={() => {
-                    confirmFavorite(movie.id);
+                    confirmFavorite(movie?.id, movie?.title);
                   }}
                 >
-                  <i class="fa-solid fa-star"></i> Add favorites
+                  <i className="fa-solid fa-star"></i> Add favorites
                 </button>
-              <Button variant="secondary" className="close-button css-button" onClick={handleCloseMovie}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
+                <Button variant="secondary" className="close-button css-button" onClick={handleCloseMovie}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
 
           </div>
 

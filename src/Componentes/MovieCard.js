@@ -69,7 +69,7 @@ const MovieCard = ({
               type="button"
               onClick={handleShowMovie}
             >
-              <i class="fa-solid fa-plus"></i> Info
+              <i className="fa-solid fa-plus"></i> Info
             </button>
 
           </div>
@@ -97,7 +97,7 @@ const MovieCard = ({
                     confirmFavorite(id);
                   }}
                 >
-                  <i class="fa-solid fa-star"></i> Add favorites
+                  <i className="fa-solid fa-star"></i> Add favorites
                 </button>
               <Button variant="secondary" className="close-button css-button" onClick={handleCloseMovie}>
                 Close
