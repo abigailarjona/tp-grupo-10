@@ -19,7 +19,6 @@ const MovieCard = ({
 }) => {
 
   const { user } = useAuth();
-  console.log(user.email)
 
   const [showMovie, setShowMovie] = useState(false);
 
@@ -63,47 +62,44 @@ const MovieCard = ({
     <div className="card text-center bg-dark mb-2 tarjeta">
       <div className="card-body">
         <img className="card-img-top" src={API_IMG + poster_path} alt="img" />
-        <div className="card-body boton-oculto">
+        <div className="card-body">
           <div>
             <button
               className="css-button css-button-3d css-button-3d--green"
               type="button"
               onClick={handleShowMovie}
             >
-              <i class="fa-solid fa-plus"></i> Info
+              <i className="fa-solid fa-plus"></i> Info
             </button>
 
           </div>
           <Modal show={showMovie} onHide={handleCloseMovie}>
             <Modal.Header closeButton>
-              <Modal.Title>
-                <button
-                  className="css-button css-button-3d css-button-3d--yellow"
-                  type="button"
-                  onClick={() => {
-                    confirmFavorite(id);
-                  }}
-                >
-                  <i class="fa-solid fa-star"></i> Add favorites
-                </button>
-              </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <img
                 className="card-img-top"
-                style={{ width: "14rem" }}
+                style={{ width: "100%", alignSelf:"center" }}
                 src={API_IMG + backdrop_path}
                 alt="img"
               />
               <h3>{title}</h3>
               <h4>Vote average: {vote_average}</h4>
               <h5>Release Date: {release_date}</h5>
-              <br></br>
               <h6>Overview</h6>
               <p>{overview}</p>
             </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleCloseMovie}>
+            <Modal.Footer className="footer-card">
+            <button
+                  className="css-button css-button-3d--yellow"
+                  type="button"
+                  onClick={() => {
+                    confirmFavorite(id);
+                  }}
+                >
+                  <i className="fa-solid fa-star"></i> Add favorites
+                </button>
+              <Button variant="secondary" className="close-button css-button" onClick={handleCloseMovie}>
                 Close
               </Button>
             </Modal.Footer>

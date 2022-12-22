@@ -19,15 +19,39 @@
   position: inherit !important;
 }
 
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 .css-button{
   color: white;
   font-weight: bold;
+  margin: 0rem 3px 3px 0rem;
+}
+
+.css-button:active{
+  margin: 3px 0px 0px 3px;
+  box-shadow: none;
+}
+
+.footer-card{
+  justify-content: space-between !important;
+}
+
+.close-button{
+  padding: 0.3rem 1rem;
+  box-shadow: 3px 3px  rgb(45, 45, 45);
+  border-radius: 0.5rem;
 }
 
 .css-button-3d--green{
   position: inherit !important;
   background-color: rgb(29, 234, 142);
-  border: 1px solid rgb(0, 117, 82);
+  border: 1px solid rgb(8, 194, 138);
   padding: 0.3rem 1rem;
   box-shadow: 2px 2px rgb(156, 255, 210);
   border-radius: 0.5rem;
@@ -39,6 +63,14 @@
   padding: 0.3rem 1rem;
   box-shadow: 2px 2px  rgb(255, 178, 11);
   border-radius: 0.5rem;
+}
+
+.css-button-3d--green:hover{
+  background-color: rgb(75, 255, 174);
+}
+
+.css-button-3d--yellow:hover{
+  background-color: rgb(255, 227, 102);
 }
 
 body {
@@ -62,7 +94,12 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.2em;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
+}
+
+.grid_blank{
+  margin-bottom: 8rem;
+  background-color: pink;
 }
 
 h2 {
@@ -73,11 +110,29 @@ h2 {
   background-color: #111;
 }
 
+.rated h3{
+  padding: 1rem 3rem;
+}
+
+
 /* Paginación prev - next */
 
 .paginacion {
-  position: fixed;
   bottom: 0;
+  background: #111;
+  width: 102vw !important;
+  max-width: 110% !important;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  transition-timing-function: ease-in;
+  transition: all 1s;
+}
+
+.paginacion_blank{
+  bottom: 12vh;
   background: #111;
   width: 102vw !important;
   max-width: 110% !important;

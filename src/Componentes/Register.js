@@ -2,6 +2,7 @@ import '../login.css'
 import { useState } from 'react';
 import { useAuth } from '../context/authContext'
 import { useNavigate } from 'react-router-dom'
+import { NavTres } from './NavDos';
 
 // Registro de usuarios
 export function Register() {
@@ -37,6 +38,8 @@ export function Register() {
     }
 
     return (
+        <>
+         <NavTres/>
         <div className='contenedor'>
 
             <h1 className='titulo'>Register</h1>
@@ -51,7 +54,9 @@ export function Register() {
                 <button type="submit" className="boton">Register</button>
             </form>
 
-        </div>);
+        </div>
+        </>
+    );
 }
 
 export default Register; 

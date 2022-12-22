@@ -2,6 +2,7 @@ import '../login.css'
 import { useState } from 'react';
 import { useAuth } from '../context/authContext'
 import { useNavigate } from 'react-router-dom'
+import { NavTres } from './NavDos';
 
 // Login de usuarios
 export function Login() {
@@ -36,7 +37,10 @@ export function Login() {
     }
 
     return (
+        <>
+         <NavTres />
         <div className='contenedor'>
+
             <h1 className='titulo'>Log in</h1>
 
             <form onSubmit={handleSubmit}>
@@ -53,6 +57,7 @@ export function Login() {
 
 
         </div>
+        </>
     );
 };
 

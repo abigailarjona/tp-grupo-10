@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
 
+
+
 // Navbar
 function Nav() {
+
   const [show, handleShow] = useState(false);
+  
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -23,7 +27,7 @@ function Nav() {
       <nav>
         <ul>
           <li>
-            <a href="#">
+            <a>
               <img
                 className="nav_logo"
                 src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
@@ -39,15 +43,17 @@ function Nav() {
             <hr />
             <ul className="links">
               <div className="triangulo"></div>
-              <li id="primer-li">
-                <a href="/mostrarfavoritas">Mis Favoritos</a>
+
+              <li className="selecc">
+                <a className="selecc" href="/#">Home</a>
               </li>
               <hr />
               <li>
-                <a href="/logout">Log Out</a>
+                <a href="/mostrarfavoritas">Mis Favoritos</a>
               </li>
+               <hr />
               <li>
-                <a href="#">Profile</a>
+                <a href="/logout">Log Out</a>
               </li>
             </ul>
           </li>
