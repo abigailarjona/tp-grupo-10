@@ -89,28 +89,34 @@
 
   #modal-body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 90vh;
+  
   }
 
   #modal-body > div{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    align-content: center;
     width: 100%;
-    height: 100%;
+    border-bottom: 1px solid #111;
+    padding: 0.5rem;
   }
 
-  #modal-body > div p, a{
-    border-bottom: 2px solid black;
-    margin: 8px;
+  #modal-body > div > a{
+    text-decoration: none;
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+    background-color: rgba(202, 202, 202, 0.466);
+    color: #111;
   }
 
-  #modal-body > div:last-child{
-    align-items: flex-end;
+  #modal-body > div > p{
+    margin: 0px;
   }
 
   @media (max-width:587px) {

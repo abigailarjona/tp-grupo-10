@@ -1,6 +1,6 @@
 .banner {
   color: white;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -80,7 +80,7 @@
   }
 
   .banner {
-    height: 80vh;
+    height: 90vh;
   }
 
   .banner__title {
@@ -110,7 +110,7 @@
   }
 
   .banner {
-    height: 65vh;
+    height: 80vh;
   }
 
   .banner__title {

@@ -1,7 +1,7 @@
-import React, { useEffect, useState, } from "react";
+import React, { useState, } from "react";
 import "./footer.css";
 
-import { Modal, Button } from "react-bootstrap";
+import { Modal} from "react-bootstrap";
 
 
 function Footer() {
@@ -9,82 +9,104 @@ function Footer() {
 
   const handleShowMovie = () => setShowMovie(true);
   const handleCloseMovie = () => setShowMovie(false);
-  
- 
+
+
   return (
 
     <div className="footer">
-    
+
       <footer>
         <ul>
-        <div>
-          <li>
-            <a href="https://github.com/abigailarjona/tp-grupo-10">
-            <i class="fa-brands fa-github"></i>
-            </a>
-          </li>
+          <div>
+            <li>
+              <a href="https://github.com/abigailarjona/tp-grupo-10">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </li>
 
-          <li>
+            <li>
 
-          <button
-              className="integrantes"
-              type="button"
-              onClick={handleShowMovie}
-            >
-          
-            <i class="fa-solid fa-users"></i>
-            <p>Integrantes del grupo 10 </p>
-           
-            </button>
-          </li>
+              <button
+                className="integrantes"
+                type="button"
+                onClick={handleShowMovie}
+              >
+
+                <i class="fa-solid fa-users"></i>
+                <p>Integrantes del grupo 10 </p>
+
+              </button>
+            </li>
           </div>
 
           <Modal show={showMovie} onHide={handleCloseMovie}>
             <Modal.Header closeButton>
-          Grupo 10, Comision 22804, React JS CaC
+              Grupo 10, Comision 22804, React JS CaC
             </Modal.Header>
             <Modal.Body>
-             
               <h3>Integrantes:</h3>
               <div id="modal-body">
-              <div>
-              <p>Niza Laiker</p>
-              <p>Mariano Munarriz</p>
-              <p>Naira Leal</p>
-              <p>Juan Emiliano Cicirello</p>
-              <p>Abigail Arjona</p>
-              <p>Elizabeth Capuzzi</p>
-              <p>Jorge Zubieta</p>
-              <p>Maria de los Angeles Airala</p>
-              <p>Jazmin Sallis</p>
+
+                <div>
+                  <p>Niza Laiker</p>
+                  <a href="https://www.linkedin.com/in/niza-laiker-bb36a8241/"> Linkedin</a>
+                </div>
+
+                <div>
+                  <p>Mariano Munarriz</p>
+                  <a>Linkedin Mariano</a>
+                </div>
+
+                <div>
+                  <p>Naira Leal</p>
+                  <a href="https://www.linkedin.com/in/naira-leal-17898b243/">Linkedin</a>
+                </div>
+
+                <div>
+                  <p>Juan Emiliano Cicirello</p>
+                  <a href="www.linkedin.com/in/juan-emiliano-cicirello-4a3629174">Linkedin</a>
+                </div>
+
+                <div>
+                  <p>Abigail Arjona</p>
+                  <a>Linkedin Abigail</a>
+                </div>
+
+                <div>
+                  <p>Elizabeth Capuzzi</p>
+                  <a href="https://www.linkedin.com/in/ecapuzzi/">Linkedin</a>
+                </div>
+
+                <div>
+                  <p>Jorge Zubieta</p>
+                  <a href="https://www.linkedin.com/in/jorge-zubieta-54794013/">Linkedin</a>
+                </div>
+
+                <div>
+                  <p>Maria de los Angeles Airala</p>
+                  <a href="https://www.linkedin.com/in/maria-de-los-angeles-airala-b6ba6b31">Linkedin</a>
+                </div>
+
+                <div>
+                  <p>Jazmin Sallis</p>
+                  <a href="https://www.linkedin.com/in/jazm%C3%ADn-sallis-b62771223/">Linkedin</a>
+                </div>
               </div>
-              
-              <div>
-              <a>linkedin</a>
-              <a>linkedin</a>
-              <a>linkedin</a>
-              <a>linkedin</a>
-              <a>linkedin</a>
-              <a>linkedin</a>
-              <a>linkedin</a>
-              <a>linkedin</a>
-              <a>linkedin</a>
-              </div>
-              </div>             
-        
+
             </Modal.Body>
-        
+
           </Modal>
 
           <li>
             <a href="#" id="contactanos">
-            <i class="fa-regular fa-envelope"></i>
+              <i class="fa-regular fa-envelope"></i>
               Contactanos
             </a>
-            </li>
+          </li>
         </ul>
       </footer>
     </div>
-  )};
+  )
+};
 
-  export default Footer;
+export default Footer;
