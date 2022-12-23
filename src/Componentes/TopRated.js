@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import "../App.css";
 import MovieCard from "./MovieCard";
+
+
 
 function TopRated() {
   const [movies, setMovies] = useState([]);
   let [page, setPage] = useState(1);
+
 
   useEffect(() => {
     fetch(
@@ -17,6 +20,7 @@ function TopRated() {
       });
   }, [page]);
 
+  // Control de paginacion
   const controlPage = (e) => {
     switch (e.target.dataset.id) {
       case "next":
@@ -34,9 +38,10 @@ function TopRated() {
     }
   };
 
+
   return (
     <>
-      <div className="row mt-3">
+      <div className="rated row">
         <h3>Top rated</h3>
         <div>
           {movies.length > 0 ? (
@@ -51,13 +56,15 @@ function TopRated() {
             <h5>waiting...</h5>
           )}
         </div>
-        <div className="row mb-5"></div>
+        
         <div className="paginacion">
-          <button id="btnAnterior" data-id="prev" onClick={controlPage}>
-            Prev
+          <button id="btnAnterior" onClick={controlPage}>
+            <i data-id="prev" className="fa-solid fa-chevron-left"></i>
           </button>
           <button id="btnSiguiente" data-id="next" onClick={controlPage}>
-            Next
+            <i data-id="next" className="fa-solid fa-chevron-right"></i>
+     
+          
           </button>
         </div>
       </div>
